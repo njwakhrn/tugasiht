@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Portfolio</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { 
+            background: #1e1e2f url('https://www.transparenttextures.com/patterns/stardust.png'); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 40px 20px;
+            overflow-y: auto;
+            color: #ffffff;
+        }
+
+        .container { 
+            display: flex; 
+            width: 85%; 
+            max-width: 1000px; 
+            background: #2a2a3a; 
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            margin: auto;
+        }
+
+        .left { 
+            width: 55%; 
+            background: linear-gradient(135deg, #3a3a55, #5b5b89); 
+            padding: 30px; 
+            text-align: center; 
+        }
+
+        .left img { 
+            width: 130px; 
+            height: 130px; 
+            border-radius: 50%; 
+            border: 4px solid #ffffff;
+        }
+
+        .social-icons a { 
+            color: #ffffff; 
+            font-size: 22px; 
+            margin: 10px; 
+            display: inline-block; 
+            transition: 0.3s; 
+        }
+
+        .social-icons a:hover { 
+            transform: scale(1.2); 
+            color: #a7a7ff; 
+        }
+
+        .skills, .languages, .contact { text-align: center; margin-top: 20px; }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-item {
+            text-align: center;
+            background: #3a3a55;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            background: #5b5b89;
+        }
+
+        .skill-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .skill-item:hover img {
+            transform: translateY(-15px);
+        }
+
+        .skill-item p { margin-top: 5px; font-size: 14px; transition: transform 0.5s ease-in-out; }
+
+        .skill-item:hover p {
+            transform: translateY(-12px);
+        }
+
+        .bar-container { 
+            width: 100%; 
+            background: #444; 
+            border-radius: 10px; 
+            margin: 5px 0; 
+            height: 12px; 
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #6a5acd, #a7a7ff);
+            animation: fillBar 2s ease-in-out;
+            box-shadow: 0 0 8px rgba(167, 167, 255, 0.8);
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .indo { width: 100%; background: #6a5acd; }
+        .eng { width: 50%; background: #8787d8; }
+        .malay { width: 65%; background: #9a8fd6; }
+        .right { 
+            width: 65%; 
+            padding: 40px; 
+            background: #2f2f50;
+        }
+
+        h2 { color: #a7a7ff; margin-bottom: 0px; }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section-title i {
+            background: #a7a7ff;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+
+        .section-content {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-left: 40px; 
+        }
+
+        .section-content p {
+            line-height: 1.6;
+            font-size: 14px;
+            text-align: left;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .section-content strong {
+            font-weight: bold;
+        }
+        
+        .interests {
+        text-align: center;
+        margin-top: 20px;
+        }
+
+        .interests h3 {
+            margin-bottom: 15px;
+        }
+
+        .interests ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .interests li {
+            background: #3a3a55;
+            padding: 8px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 14px;
+            box-shadow: 0 0 10px rgba(167, 167, 255, 0.3);
+        }
+
+        .interests li:hover {
+            background: #5b5b89;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(167, 167, 255, 0.6);
+        }
+
+        .skills h3 {
+            margin-bottom: 10px;
+        }
+
+        .profile {
+            text-align: justify;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #3a3a55;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(167, 167, 255, 0.3);
+        }
+
+        .profile h3 {
+            color: #a7a7ff;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .profile .motto {
+            font-style: italic;
+            font-size: 16px;
+            font-weight: bold;
+            color: #a7a7ff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="./photo.jpg" alt="Profile Picture">
+            <h2>Najwa Khairunnisa</h2>
+            <p>najwakh03@email.com</p><br>
+            <p>Mathematics Education Student</p>
+            <p><strong>Universitas Sultan Ageng Tirtayasa</strong></p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com /njwakhrn?utm_source=ig_web_button_share_sheet&igsh=ZDNIZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="profile">
+                <h3>Profile</h3>
+                <p>
+                    I am a Mathematics Education student at Sultan Ageng Tirtayasa University with a strong passion for learning and self-improvement. 
+                    I am highly organized, detail-oriented, and quick to grasp new concepts. With creativity and perseverance, I excel in completing tasks efficiently. 
+                    Additionally, I have skills in visual design, video editing, and content creation. My commitment to academic excellence and creative pursuits 
+                    reflects my dedication to continuous growth.
+                </p>
+                <p class="motto">"Step by step, with faith and purpose."</p>
+            </div>     
+
+            <div class="skills">
+                <h3>Skills</h3>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <img src="./alightmotion.png" alt="Alight Motion">
+                        <p>Alight Motion</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./canva.png" alt="Canva">
+                        <p>Canva</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./ibis.jpg" alt="ibisPaint X">
+                        <p>ibisPaint X</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./phonto.png" alt="Phonto">
+                        <p>Phonto</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./carrd.jpeg" alt="Carrd.co">
+                        <p>Carrd.co</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./office.png" alt="PowerPoint">
+                        <p>Microsoft office</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interests">
+                <h3>Interests</h3>
+                <ul>
+                    <li>Astronomy</li>
+                    <li>Dinosaurs</li>
+                    <li>Digital & Traditional Drawing</li>
+                    <li>Music</li>
+                    <li>Fantasy Films & Books</li>
+                    <li>Design</li>
+                    <li>Motion Graphics</li>
+                </ul>
+            </div>
+            <div class="languages">
+                <h3>Languages</h3>
+                <p>Indonesian</p>
+                <div class="bar-container"><div class="bar indo"></div></div>
+                <p>English</p>
+                <div class="bar-container"><div class="bar eng"></div></div>
+                <p>Malay (Bengkulu)</p>
+                <div class="bar-container"><div class="bar malay"></div></div>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>Phone: 0813-1048-4420</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Experience</h2>
+                </div>
+                <div class="section-content">
+                    <p><strong>Extracurricular of MAN 1 Kota Serang</strong> <br> Green School MAN 1 Kota Serang - Secretary (2022 - 2023) <br> PIKR (Youth Information and Counseling Center) - Member (2021 - 2022)</p>
+                    <p><strong>Content Creation</strong> <br> Digital Illustrator (2020) <br>Video Creator (PMV, AMV, & Motion Graphics) (2019 - Present)</p>
+                    <p><strong>Committees</strong> <br> Tematik - Kestari Division (2024) <br> Alumni Back to School Event at MAN 1 Kota Serang - Public Relations Division (2025)</p>
+                </div>
+            </div>
+            
+            
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    <h2>Certificates & Awards</h2>
+                </div>
+                <div class="section-content">
+                    <p><strong>2nd Runner-up (Harapan 2) - Chemistry Olympiad</strong> <br> Provincial Level, Banten – CV. Center Success Group (2023)</p>
+                    <p><strong>Participant - Chemistry KSM (Kompetisi Sains Madrasah)</strong> <br> District Level – Kemenag (2023) </p>
+                    <p><strong>Bronze Medalist - Pre-KSM Chemistry</strong><br> Provincial Level, Banten – POSI (2022)</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                <div class="section-content">
+                    <p>Mathematics Education, Universitas Sultan Ageng Tirtayasa (2024-Present)</p>
+                    <p>Madrasah Aliyah Negeri 1 Kota Serang (2021-2024)</p>
+                    <p>Madrasah Tsanawiyah Negeri 1 Kota Serang (2018-2021)</p>
+                    <p>Sekolah Dasar Islam Terpadu Nur El-Qolam (2018)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
